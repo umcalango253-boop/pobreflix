@@ -16,7 +16,7 @@
             min-height: 100vh;
         }
 
-        /* CABEÇALHO (Traço Vermelho do desenho) */
+        /* CABEÇALHO */
         .header {
             display: flex;
             align-items: center;
@@ -61,7 +61,7 @@
             border-radius: 4px;
         }
 
-        /* TELA 2: CATÁLOGO (Traço Azul e Verde) */
+        /* TELA 2: CATÁLOGO */
         #tela-series {
             display: none;
             text-align: center;
@@ -167,8 +167,9 @@
             // Verificação de múltiplos logins
             var login1 = (user === "edu74" && pass === "edubatata");
             var login2 = (user === "teste1" && pass === "1234");
+            var login3 = (user === "cevibola" && pass === "vitorcebola");
 
-            if (login1 || login2) {
+            if (login1 || login2 || login3) {
                 document.getElementById('tela-login').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
             } else {
