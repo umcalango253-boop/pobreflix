@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobreflix</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* CABEÇALHO (Traço Vermelho do desenho) */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .letra-p {
+            font-size: 50px;
+            font-weight: bold;
+            color: red;
+            margin-right: 10px;
+        }
+        .nome-site {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* TELA 1: LOGIN */
+        #tela-login {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-top: 50px;
+        }
+        input {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            outline: none;
+        }
+        .botao-entrar {
+            background: white;
+            color: black;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        /* TELA 2: CATÁLOGO (Traço Azul e Verde) */
+        #tela-series {
+            display: none;
+            text-align: center;
+            width: 100%;
+        }
+        .titulo-azul { font-size: 45px; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
+        .subtitulo-verde { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .capa-container { display: inline-block; cursor: pointer; transition: transform 0.3s; color: white; text-decoration: none; }
+        .capa-container:hover { transform: scale(1.05); }
+        .capa-imagem { width: 180px; height: 260px; border-radius: 12px; border: 2px solid #333; object-fit: cover; display: block; }
+        .titulo-serie-rosa { display: block; margin-top: 12px; font-size: 16px; font-weight: bold; max-width: 180px; }
+
+        /* TELA 3: PÁGINA DO EPISÓDIO */
+        #tela-episodio {
+            display: none;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .titulo-pequeno { font-size: 14px; color: white; margin-bottom: 5px; }
+        .traco-vermelho-meia-linha { width: 50px; height: 3px; background-color: red; margin-bottom: 20px; }
+        .temporada { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
+        
+        .link-video {
+            display: block;
+            position: relative;
+            width: 120px;
+            height: 70px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid white;
+            margin-bottom: 15px;
+            text-decoration: none;
+        }
+        .miniatura-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        .icone-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid white;
+        }
+
+        .texto-introducao { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
+        .descricao-sinopse { font-size: 12px; color: #ccc; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="letra-p">(P)</div>
+        <div class="nome-site">pobreflix</div>
+    </div>
+
+    <div id="tela-login">
+        <label>login:</label>
+        <input type="text" id="usuario">
+        <label>senha:</label>
+        <input type="password" id="senha">
+        <button class="botao-entrar" onclick="fazerLogin()">entrar</button>
+    </div>
+
+    <div id="tela-series">
+        <h1 class="titulo-azul">SÉRIES</h1>
+        <p class="subtitulo-verde">Minhas Séries:</p>
+        <div class="capa-container" onclick="abrirEpisodio()">
+            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="capa-imagem">
+            <span class="titulo-serie-rosa">Os gorilas sapecas da vovó Safira</span>
+        </div>
+    </div>
+
+    <div id="tela-episodio">
+        <div class="titulo-pequeno">Os gorilas sapecas da vovó Safira</div>
+        <div class="traco-vermelho-meia-linha"></div>
+        <div class="temporada">Temporada 1</div>
+
+        <a href="https://drive.google.com/file/d/1DEvih-6DdEB-v_G3eS5vwmBm18Pf8gDJ/view?usp=sharing" target="_blank" class="link-video">
+            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
+            <div class="icone-play"></div>
+        </a>
+
+        <div class="texto-introducao">Introdução</div>
+        <div class="descricao-sinopse">
+            Os gorilas dizem um olá de novo, mas não um olá
+        </div>
+    </div>
+
+    <script>
+        function fazerLogin() {
+            var user = document.getElementById('usuario').value;
+            var pass = document.getElementById('senha').value;
+
+            // Verificação de múltiplos logins
+            var login1 = (user === "edu74" && pass === "edubatata");
+            var login2 = (user === "teste1" && pass === "1234");
+
+            if (login1 || login2) {
+                document.getElementById('tela-login').style.display = 'none';
+                document.getElementById('tela-series').style.display = 'block';
+            } else {
+                alert("Login ou senha incorretos!");
+            }
+        }
+
+        function abrirEpisodio() {
+            document.getElementById('tela-series').style.display = 'none';
+            document.getElementById('tela-episodio').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
