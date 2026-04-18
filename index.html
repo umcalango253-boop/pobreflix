@@ -16,12 +16,34 @@
             min-height: 100vh;
         }
 
-        /* CABEÇALHO */
-        .header {
+        /* CABEÇALHO COM BOTÃO VOLTAR ALINHADO */
+        .header-container {
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
             margin-top: 20px;
             margin-bottom: 40px;
+        }
+
+        .botao-voltar {
+            position: absolute;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        .botao-voltar:hover {
+            color: red;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
         }
         .letra-p {
             font-size: 50px;
@@ -116,7 +138,6 @@
             border-left: 15px solid white;
         }
 
-        /* Estilo para o retângulo do Episódio 3 */
         .retangulo-futuro {
             width: 120px;
             height: 70px;
@@ -138,9 +159,13 @@
 </head>
 <body>
 
-    <div class="header">
-        <div class="letra-p">(P)</div>
-        <div class="nome-site">pobreflix</div>
+    <div class="header-container">
+        <button id="btn-voltar" class="botao-voltar" style="display: none;" onclick="voltar()">←</button>
+        
+        <div class="header-logo">
+            <div class="letra-p">(P)</div>
+            <div class="nome-site">pobreflix</div>
+        </div>
     </div>
 
     <div id="tela-login">
@@ -170,9 +195,7 @@
             <div class="icone-play"></div>
         </a>
         <div class="texto-introducao">Introdução</div>
-        <div class="descricao-sinopse">
-            Os gorilas dizem um olá de novo, mas não um olá
-        </div>
+        <div class="descricao-sinopse">Os gorilas dizem um olá de novo, mas não um olá</div>
 
         <a href="https://drive.google.com/file/d/1vm3-j0e0QJyilzbZUDyeElkXboHv6uSh/view?usp=sharing" target="_blank" class="link-video">
             <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
@@ -194,18 +217,26 @@
     </div>
 
     <script>
+        var telaAtual = "login";
+
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
 
-            var login1 = (user === "edu74" && pass === "edubatata");
-            var login2 = (user === "teste1" && pass === "1234");
-            var login3 = (user === "cevibola" && pass === "vitorcebola");
-            var login4 = (user === "miguelcabra" && pass === "miguelmacho");
+            var logins = [
+                {u: "edu74", p: "edubatata"},
+                {u: "teste1", p: "1234"},
+                {u: "cevibola", p: "vitorcebola"},
+                {u: "miguelcabra", p: "miguelmacho"}
+            ];
 
-            if (login1 || login2 || login3 || login4) {
+            var sucesso = logins.some(l => l.u === user && l.p === pass);
+
+            if (sucesso) {
                 document.getElementById('tela-login').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
+                document.getElementById('btn-voltar').style.display = 'block';
+                telaAtual = "series";
             } else {
                 alert("Login ou senha incorretos!");
             }
@@ -214,6 +245,20 @@
         function abrirEpisodio() {
             document.getElementById('tela-series').style.display = 'none';
             document.getElementById('tela-episodio').style.display = 'block';
+            telaAtual = "episodio";
+        }
+
+        function voltar() {
+            if (telaAtual === "series") {
+                document.getElementById('tela-series').style.display = 'none';
+                document.getElementById('btn-voltar').style.display = 'none';
+                document.getElementById('tela-login').style.display = 'flex';
+                telaAtual = "login";
+            } else if (telaAtual === "episodio") {
+                document.getElementById('tela-episodio').style.display = 'none';
+                document.getElementById('tela-series').style.display = 'block';
+                telaAtual = "series";
+            }
         }
     </script>
 
