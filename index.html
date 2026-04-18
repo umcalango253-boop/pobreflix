@@ -86,7 +86,6 @@
         .traco-vermelho-meia-linha { width: 50px; height: 3px; background-color: red; margin-bottom: 20px; }
         .temporada { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
         
-        /* ESTILO DO VÍDEO/PLAY */
         .link-video {
             display: block;
             position: relative;
@@ -118,7 +117,6 @@
 
         .texto-introducao, .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .descricao-sinopse, .descricao-cinza { font-size: 12px; color: #ccc; margin-bottom: 30px; }
-        .descricao-cinza { color: #888; }
     </style>
 </head>
 <body>
@@ -172,11 +170,13 @@
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
 
+            // Logins existentes + Novo login do Miguel
             var login1 = (user === "edu74" && pass === "edubatata");
             var login2 = (user === "teste1" && pass === "1234");
             var login3 = (user === "cevibola" && pass === "vitorcebola");
+            var login4 = (user === "miguelcabra" && pass === "miguelmacho");
 
-            if (login1 || login2 || login3) {
+            if (login1 || login2 || login3 || login4) {
                 document.getElementById('tela-login').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
             } else {
