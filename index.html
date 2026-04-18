@@ -87,7 +87,6 @@
         .traco-vermelho-meia-linha { width: 50px; height: 3px; background-color: red; margin-bottom: 20px; }
         .temporada { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
         
-        /* Estilo para vídeos reais (Intro e Ep 1) */
         .link-video {
             display: block;
             position: relative;
@@ -117,13 +116,19 @@
             border-left: 15px solid white;
         }
 
-        /* Estilo para o retângulo vazio (Episódio 2) */
-        .retangulo-vazio {
+        /* Retângulo Episódio 2 com o horário */
+        .retangulo-episodio2 {
             width: 120px;
             height: 70px;
             border: 1px solid white;
             border-radius: 6px;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px; /* Escrita média */
+            font-weight: bold;
+            color: white;
         }
 
         .texto-introducao, .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
@@ -176,7 +181,7 @@
         <div class="titulo-episodio">Episódio 1</div>
         <div class="descricao-cinza">Os 5 gorilas se cansam de casa...</div>
 
-        <div class="retangulo-vazio"></div>
+        <div class="retangulo-episodio2">14:30</div>
         <div class="titulo-episodio">Episódio 2</div>
         <div class="descricao-cinza">Chegada a casa da vovó mas eles não esperavam por isso...</div>
     </div>
