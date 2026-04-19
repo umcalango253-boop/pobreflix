@@ -222,13 +222,15 @@
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
 
+            // Lista de acessos atualizada
             var logins = [
                 {u: "edu74", p: "edubatata"},
                 {u: "teste1", p: "1234"},
                 {u: "cevibola", p: "vitorcebola"},
                 {u: "miguelcabra", p: "miguelmacho"},
                 {u: "theol", p: "theocabra"},
-                {u: "martinbro", p: "martinbro"}
+                {u: "martinbro", p: "martinbro"},
+                {u: "gbfrango", p: "frango"}
             ];
 
             var sucesso = logins.some(l => l.u === user && l.p === pass);
