@@ -85,20 +85,47 @@
 
         /* TELA 2: CATÁLOGO */
         #tela-series {
-            display: none;
+            display: none; /* Começa escondido */
             text-align: center;
             width: 100%;
         }
         .titulo-azul { font-size: 45px; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
         .subtitulo-verde { color: #888; font-size: 14px; margin-bottom: 30px; }
-        .capa-container { display: inline-block; cursor: pointer; transition: transform 0.3s; color: white; text-decoration: none; }
+        
+        .grid-series {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .capa-container { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer; 
+            transition: transform 0.3s; 
+            color: white; 
+            text-decoration: none; 
+            width: 180px;
+        }
         .capa-container:hover { transform: scale(1.05); }
         .capa-imagem { width: 180px; height: 260px; border-radius: 12px; border: 2px solid #333; object-fit: cover; display: block; }
-        .titulo-serie-rosa { display: block; margin-top: 12px; font-size: 16px; font-weight: bold; max-width: 180px; }
+        
+        .titulo-serie-rosa { 
+            display: block; 
+            margin-top: 12px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            color: #ff69b4;
+            text-align: center;
+        }
 
-        /* TELA 3: PÁGINA DO EPISÓDIO */
+        /* TELA 3: EPISÓDIOS GORILAS */
         #tela-episodio {
-            display: none;
+            display: none; /* Começa escondido */
             width: 90%;
             max-width: 500px;
             text-align: left;
@@ -120,12 +147,7 @@
             margin-bottom: 10px;
             text-decoration: none;
         }
-        .miniatura-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
+        .miniatura-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
         .icone-play {
             position: absolute;
             top: 50%;
@@ -155,6 +177,17 @@
         .texto-introducao, .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .descricao-sinopse, .descricao-cinza { font-size: 12px; color: #ccc; margin-bottom: 30px; }
         .descricao-cinza { color: #888; }
+
+        /* TELA 4: PÁGINA DA DATA */
+        #tela-data-cachorros {
+            display: none; /* Começa escondido */
+            width: 100%;
+            height: 60vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .data-centralizada { font-size: 60px; font-weight: bold; color: white; }
+
     </style>
 </head>
 <body>
@@ -178,9 +211,17 @@
     <div id="tela-series">
         <h1 class="titulo-azul">SÉRIES</h1>
         <p class="subtitulo-verde">Minhas Séries:</p>
-        <div class="capa-container" onclick="abrirEpisodio()">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="capa-imagem">
-            <span class="titulo-serie-rosa">Os gorilas sapecas da vovó Safira</span>
+        
+        <div class="grid-series">
+            <div class="capa-container" onclick="abrirEpisodio()">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="capa-imagem">
+                <span class="titulo-serie-rosa">Os gorilas sapecas da vovó Safira</span>
+            </div>
+
+            <div class="capa-container" onclick="abrirDataCachorros()">
+                <img src="https://i.postimg.cc/4NqbXysg/Gemini-Generated-Image-wggw1xwggw1xwggw.png" class="capa-imagem">
+                <span class="titulo-serie-rosa">A missão secreta dos cachorros</span>
+            </div>
         </div>
     </div>
 
@@ -222,42 +263,43 @@
         <div class="descricao-cinza">Vovó Safira fica preocupada e desesperada!</div>
     </div>
 
+    <div id="tela-data-cachorros">
+        <div class="data-centralizada">??/05</div>
+    </div>
+
     <script>
         var telaAtual = "login";
 
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
-
-            // Lista de logins atualizada com enzoz
             var logins = [
-                {u: "edu74", p: "edubatata"},
-                {u: "teste1", p: "1234"},
-                {u: "cevibola", p: "vitorcebola"},
-                {u: "miguelcabra", p: "miguelmacho"},
-                {u: "theol", p: "theocabra"},
-                {u: "martinbro", p: "martinbro"},
-                {u: "gbfrango", p: "frango"},
-                {u: "theoh", p: "bebet"},
-                {u: "enzoz", p: "enzo"}
+                {u: "edu74", p: "edubatata"}, {u: "teste1", p: "1234"},
+                {u: "cevibola", p: "vitorcebola"}, {u: "miguelcabra", p: "miguelmacho"},
+                {u: "theol", p: "theocabra"}, {u: "martinbro", p: "martinbro"},
+                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"}, {u: "enzoz", p: "enzo"}
             ];
-
             var sucesso = logins.some(l => l.u === user && l.p === pass);
-
             if (sucesso) {
                 document.getElementById('tela-login').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
+                document.getElementById('tela-episodio').style.display = 'none';
+                document.getElementById('tela-data-cachorros').style.display = 'none';
                 document.getElementById('btn-voltar').style.display = 'block';
                 telaAtual = "series";
-            } else {
-                alert("Login ou senha incorretos!");
-            }
+            } else { alert("Login ou senha incorretos!"); }
         }
 
         function abrirEpisodio() {
             document.getElementById('tela-series').style.display = 'none';
             document.getElementById('tela-episodio').style.display = 'block';
             telaAtual = "episodio";
+        }
+
+        function abrirDataCachorros() {
+            document.getElementById('tela-series').style.display = 'none';
+            document.getElementById('tela-data-cachorros').style.display = 'flex';
+            telaAtual = "data-cachorros";
         }
 
         function voltar() {
@@ -268,6 +310,10 @@
                 telaAtual = "login";
             } else if (telaAtual === "episodio") {
                 document.getElementById('tela-episodio').style.display = 'none';
+                document.getElementById('tela-series').style.display = 'block';
+                telaAtual = "series";
+            } else if (telaAtual === "data-cachorros") {
+                document.getElementById('tela-data-cachorros').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
                 telaAtual = "series";
             }
