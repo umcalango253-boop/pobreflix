@@ -229,6 +229,7 @@
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
 
+            // Lista de logins atualizada
             var logins = [
                 {u: "edu74", p: "edubatata"},
                 {u: "teste1", p: "1234"},
@@ -236,7 +237,8 @@
                 {u: "miguelcabra", p: "miguelmacho"},
                 {u: "theol", p: "theocabra"},
                 {u: "martinbro", p: "martinbro"},
-                {u: "gbfrango", p: "frango"}
+                {u: "gbfrango", p: "frango"},
+                {u: "theoh", p: "bebet"}
             ];
 
             var sucesso = logins.some(l => l.u === user && l.p === pass);
