@@ -160,7 +160,6 @@
             border-left: 15px solid white;
         }
 
-        /* Estilo para retângulos de episódios futuros */
         .retangulo-futuro {
             width: 120px;
             height: 70px;
@@ -171,7 +170,7 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 14px; /* Ajustado para caber o texto mais longo */
+            font-size: 14px;
             font-weight: bold;
             text-align: center;
             padding: 5px;
@@ -284,13 +283,18 @@
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
+
+            // Lista de logins atualizada com antonio
             var logins = [
                 {u: "edu74", p: "edubatata"}, {u: "teste1", p: "1234"},
                 {u: "cevibola", p: "vitorcebola"}, {u: "miguelcabra", p: "miguelmacho"},
                 {u: "theol", p: "theocabra"}, {u: "martinbro", p: "martinbro"},
-                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"}, {u: "enzoz", p: "enzo"}
+                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"}, 
+                {u: "enzoz", p: "enzo"}, {u: "antonio", p: "formiga"}
             ];
+
             var sucesso = logins.some(l => l.u === user && l.p === pass);
+
             if (sucesso) {
                 document.getElementById('tela-login').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
