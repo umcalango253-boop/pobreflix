@@ -16,7 +16,7 @@
             min-height: 100vh;
         }
 
-        /* CABEÇALHO COM BOTÃO VOLTAR ALINHADO */
+        /* CABEÇALHO */
         .header-container {
             display: flex;
             align-items: center;
@@ -37,160 +37,47 @@
             border: none;
             padding: 5px;
         }
-        .botao-voltar:hover {
-            color: red;
-        }
+        .botao-voltar:hover { color: red; }
 
-        .header-logo {
-            display: flex;
-            align-items: center;
-        }
-        .letra-p {
-            font-size: 50px;
-            font-weight: bold;
-            color: red;
-            margin-right: 10px;
-        }
-        .nome-site {
-            font-size: 30px;
-            font-weight: bold;
-        }
+        .header-logo { display: flex; align-items: center; }
+        .letra-p { font-size: 50px; font-weight: bold; color: red; margin-right: 10px; }
+        .nome-site { font-size: 30px; font-weight: bold; }
 
         /* TELA 1: LOGIN */
-        #tela-login {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            margin-top: 50px;
-        }
-        input {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: 12px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            outline: none;
-        }
-        .botao-entrar {
-            background: white;
-            color: black;
-            border: none;
-            padding: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
+        #tela-login { display: flex; flex-direction: column; width: 300px; margin-top: 50px; }
+        input { background: transparent; border: 2px solid white; color: white; padding: 12px; margin-bottom: 20px; border-radius: 4px; outline: none; }
+        .botao-entrar { background: white; color: black; border: none; padding: 15px; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 4px; }
 
         /* TELA 2: CATÁLOGO */
-        #tela-series {
-            display: none;
-            text-align: center;
-            width: 100%;
-        }
+        #tela-series { display: none; text-align: center; width: 100%; }
         .titulo-azul { font-size: 45px; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
         .subtitulo-verde { color: #888; font-size: 14px; margin-bottom: 30px; }
         
-        .grid-series {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .capa-container { 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer; 
-            transition: transform 0.3s; 
-            color: white; 
-            text-decoration: none; 
-            width: 180px;
-        }
+        .grid-series { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .capa-container { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.3s; width: 180px; }
         .capa-container:hover { transform: scale(1.05); }
-        .capa-imagem { width: 180px; height: 260px; border-radius: 12px; border: 2px solid #333; object-fit: cover; display: block; }
-        
-        .titulo-serie-rosa { 
-            display: block; 
-            margin-top: 12px; 
-            font-size: 16px; 
-            font-weight: bold; 
-            color: #ff69b4;
-            text-align: center;
-        }
+        .capa-imagem { width: 180px; height: 260px; border-radius: 12px; border: 2px solid #333; object-fit: cover; }
+        .titulo-serie-rosa { display: block; margin-top: 12px; font-size: 16px; font-weight: bold; color: #ff69b4; text-align: center; }
 
-        /* TELA 3: EPISÓDIOS GORILAS */
-        #tela-episodio {
-            display: none;
-            width: 90%;
-            max-width: 500px;
-            text-align: left;
-            margin-top: 20px;
-            padding-bottom: 50px;
-        }
+        /* TELA 3: EPISÓDIOS */
+        #tela-episodio { display: none; width: 90%; max-width: 500px; text-align: left; margin-top: 20px; padding-bottom: 50px; }
         .titulo-pequeno { font-size: 14px; color: white; margin-bottom: 5px; }
         .traco-vermelho-meia-linha { width: 50px; height: 3px; background-color: red; margin-bottom: 20px; }
         .temporada { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
         
-        .link-video {
-            display: block;
-            position: relative;
-            width: 120px;
-            height: 70px;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid white;
-            margin-bottom: 10px;
-            text-decoration: none;
-        }
+        .link-video { display: block; position: relative; width: 120px; height: 70px; border-radius: 6px; overflow: hidden; border: 1px solid white; margin-bottom: 10px; text-decoration: none; }
         .miniatura-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
-        .icone-play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0; 
-            height: 0; 
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid white;
-        }
+        .icone-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid white; }
 
-        .retangulo-futuro {
-            width: 120px;
-            height: 70px;
-            border: 1px solid white;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            padding: 5px;
-            box-sizing: border-box;
-        }
+        .retangulo-futuro { width: 120px; height: 70px; border: 1px solid white; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: bold; text-align: center; padding: 5px; box-sizing: border-box; }
 
         .texto-introducao, .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .descricao-sinopse, .descricao-cinza { font-size: 12px; color: #ccc; margin-bottom: 30px; }
         .descricao-cinza { color: #888; }
 
-        /* TELA 4: PÁGINA DA DATA */
-        #tela-data-cachorros {
-            display: none;
-            width: 100%;
-            height: 60vh;
-            align-items: center;
-            justify-content: center;
-        }
+        /* TELA 4: DATA CACHORROS */
+        #tela-data-cachorros { display: none; width: 100%; height: 60vh; align-items: center; justify-content: center; }
         .data-centralizada { font-size: 60px; font-weight: bold; color: white; }
-
     </style>
 </head>
 <body>
@@ -214,13 +101,11 @@
     <div id="tela-series">
         <h1 class="titulo-azul">SÉRIES</h1>
         <p class="subtitulo-verde">Minhas Séries:</p>
-        
         <div class="grid-series">
             <div class="capa-container" onclick="abrirEpisodio()">
                 <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="capa-imagem">
                 <span class="titulo-serie-rosa">Os gorilas sapecas da vovó Safira</span>
             </div>
-
             <div class="capa-container" onclick="abrirDataCachorros()">
                 <img src="https://i.postimg.cc/4NqbXysg/Gemini-Generated-Image-wggw1xwggw1xwggw.png" class="capa-imagem">
                 <span class="titulo-serie-rosa">A missão secreta dos cachorros</span>
@@ -268,8 +153,15 @@
         <div class="titulo-episodio">Episódio 4 - O desespero</div>
         <div class="descricao-cinza">Vovó Safira fica preocupada e desesperada!</div>
 
-        <div class="retangulo-futuro">17:00 - 21/04</div>
-        <div class="titulo-episodio">Episódio 5 - ???</div>
+        <a href="https://drive.google.com/file/d/1nD9UDb3ggkYHQj1ESHqbENSdhqVcWj2D/view?usp=sharing" target="_blank" class="link-video">
+            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
+            <div class="icone-play"></div>
+        </a>
+        <div class="titulo-episodio">Episódio 5 - A escuridão</div>
+        <div class="descricao-cinza">Os gorilas ficam na escuridão do terror...</div>
+
+        <div class="retangulo-futuro">22/04 - 15:00</div>
+        <div class="titulo-episodio">Episódio 6 - ???</div>
         <div class="descricao-cinza">???</div>
     </div>
 
@@ -283,8 +175,6 @@
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
-
-            // Lista de logins atualizada com antonio
             var logins = [
                 {u: "edu74", p: "edubatata"}, {u: "teste1", p: "1234"},
                 {u: "cevibola", p: "vitorcebola"}, {u: "miguelcabra", p: "miguelmacho"},
@@ -292,9 +182,7 @@
                 {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"}, 
                 {u: "enzoz", p: "enzo"}, {u: "antonio", p: "formiga"}
             ];
-
             var sucesso = logins.some(l => l.u === user && l.p === pass);
-
             if (sucesso) {
                 document.getElementById('tela-login').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
