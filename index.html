@@ -16,7 +16,6 @@
             min-height: 100vh;
         }
 
-        /* CABEÇALHO */
         .header-container {
             display: flex;
             align-items: center;
@@ -43,39 +42,36 @@
         .letra-p { font-size: 50px; font-weight: bold; color: red; margin-right: 10px; }
         .nome-site { font-size: 30px; font-weight: bold; }
 
-        /* TELA 1: LOGIN */
         #tela-login { display: flex; flex-direction: column; width: 300px; margin-top: 50px; }
         input { background: transparent; border: 2px solid white; color: white; padding: 12px; margin-bottom: 20px; border-radius: 4px; outline: none; }
         .botao-entrar { background: white; color: black; border: none; padding: 15px; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 4px; }
 
-        /* TELA 2: CATÁLOGO */
         #tela-series { display: none; text-align: center; width: 100%; }
         .titulo-azul { font-size: 45px; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
         .subtitulo-verde { color: #888; font-size: 14px; margin-bottom: 30px; }
-        
+       
         .grid-series { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; }
         .capa-container { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.3s; width: 180px; }
         .capa-container:hover { transform: scale(1.05); }
         .capa-imagem { width: 180px; height: 260px; border-radius: 12px; border: 2px solid #333; object-fit: cover; }
         .titulo-serie-rosa { display: block; margin-top: 12px; font-size: 16px; font-weight: bold; color: #ff69b4; text-align: center; }
 
-        /* TELA 3: EPISÓDIOS */
         #tela-episodio { display: none; width: 90%; max-width: 500px; text-align: left; margin-top: 20px; padding-bottom: 50px; }
         .titulo-pequeno { font-size: 14px; color: white; margin-bottom: 5px; }
         .traco-vermelho-meia-linha { width: 50px; height: 3px; background-color: red; margin-bottom: 20px; }
         .temporada { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
-        
+       
         .link-video { display: block; position: relative; width: 120px; height: 70px; border-radius: 6px; overflow: hidden; border: 1px solid white; margin-bottom: 10px; text-decoration: none; }
         .miniatura-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
         .icone-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid white; }
 
-        .retangulo-futuro { width: 120px; height: 70px; border: 1px solid white; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: bold; text-align: center; padding: 5px; box-sizing: border-box; }
+        .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
+        .descricao-cinza { font-size: 12px; color: #888; margin-bottom: 30px; }
 
-        .texto-introducao, .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
-        .descricao-sinopse, .descricao-cinza { font-size: 12px; color: #ccc; margin-bottom: 30px; }
-        .descricao-cinza { color: #888; }
+        .container-final { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 50px; text-align: center; }
+        .texto-fim-gigante { color: #8B0000; font-weight: bold; font-size: 100px; margin: 0; line-height: 1; }
+        .img-troll-pequena { width: 60px; height: auto; margin-top: 20px; }
 
-        /* TELA 4: DATA CACHORROS */
         #tela-data-cachorros { display: none; width: 100%; height: 60vh; align-items: center; justify-content: center; }
         .data-centralizada { font-size: 60px; font-weight: bold; color: white; }
     </style>
@@ -122,8 +118,8 @@
             <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
             <div class="icone-play"></div>
         </a>
-        <div class="texto-introducao">Introdução</div>
-        <div class="descricao-sinopse">Os gorilas dizem um olá de novo, mas não um olá</div>
+        <div class="titulo-episodio">Introdução</div>
+        <div class="descricao-cinza">Os gorilas dizem um olá de novo, mas não um olá</div>
 
         <a href="https://drive.google.com/file/d/1vm3-j0e0QJyilzbZUDyeElkXboHv6uSh/view?usp=sharing" target="_blank" class="link-video">
             <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
@@ -137,7 +133,7 @@
             <div class="icone-play"></div>
         </a>
         <div class="titulo-episodio">Episódio 2 - Vovó Safira</div>
-        <div class="descricao-cinza">Chegada a casa da vovó mas eles não esperavam por isso...</div>
+        <div class="descricao-cinza">Chegada a casa da vovó...</div>
 
         <a href="https://drive.google.com/file/d/12_8qNViBeJzvNOR4XL_ZCscS1K5kc50j/view?usp=sharing" target="_blank" class="link-video">
             <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
@@ -151,7 +147,7 @@
             <div class="icone-play"></div>
         </a>
         <div class="titulo-episodio">Episódio 4 - O desespero</div>
-        <div class="descricao-cinza">Vovó Safira fica preocupada e desesperada!</div>
+        <div class="descricao-cinza">Vovó Safira fica preocupada...</div>
 
         <a href="https://drive.google.com/file/d/1nD9UDb3ggkYHQj1ESHqbENSdhqVcWj2D/view?usp=sharing" target="_blank" class="link-video">
             <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
@@ -174,18 +170,25 @@
         <div class="titulo-episodio">Episódio 7 - O esconderijo</div>
         <div class="descricao-cinza">Os gorilas descobrem o esconderijo do vilão…</div>
 
-        <div class="retangulo-futuro">???</div>
-        <div class="titulo-episodio">Episódio 8 FINAL - ???</div>
-        <div class="descricao-cinza">???</div>
+        <a href="https://drive.google.com/file/d/1J5s8IZYU1GJ0Pgbj2iFUIH7ERYCfLm5C/view?usp=sharing" target="_blank" class="link-video">
+            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
+            <div class="icone-play"></div>
+        </a>
+        <div class="titulo-episodio">Episódio 8 FINAL - A batalha final</div>
+        <div class="descricao-cinza">Os gorilas enfrentam o vilão...</div>
+
+        <div class="container-final">
+            <div class="texto-fim-gigante">FIM</div>
+            <img src="https://i.postimg.cc/1XXDjVrR/Trollface.png" class="img-troll-pequena">
+        </div>
     </div>
 
     <div id="tela-data-cachorros">
-        <div class="data-centralizada">??/05</div>
+        <div class="data-centralizada">?7/05</div>
     </div>
 
     <script>
         var telaAtual = "login";
-
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
@@ -193,7 +196,7 @@
                 {u: "edu74", p: "edubatata"}, {u: "teste1", p: "1234"},
                 {u: "cevibola", p: "vitorcebola"}, {u: "miguelcabra", p: "miguelmacho"},
                 {u: "theol", p: "theocabra"}, {u: "martinbro", p: "martinbro"},
-                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"}, 
+                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"},
                 {u: "enzoz", p: "enzo"}, {u: "antonio", p: "formiga"}
             ];
             var sucesso = logins.some(l => l.u === user && l.p === pass);
@@ -204,19 +207,16 @@
                 telaAtual = "series";
             } else { alert("Login ou senha incorretos!"); }
         }
-
         function abrirEpisodio() {
             document.getElementById('tela-series').style.display = 'none';
             document.getElementById('tela-episodio').style.display = 'block';
             telaAtual = "episodio";
         }
-
         function abrirDataCachorros() {
             document.getElementById('tela-series').style.display = 'none';
             document.getElementById('tela-data-cachorros').style.display = 'flex';
             telaAtual = "data-cachorros";
         }
-
         function voltar() {
             if (telaAtual === "series") {
                 document.getElementById('tela-series').style.display = 'none';
