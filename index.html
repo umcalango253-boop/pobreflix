@@ -49,7 +49,6 @@
         #tela-series { display: none; text-align: center; width: 100%; }
         .titulo-azul { font-size: 45px; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
         .subtitulo-verde { color: #888; font-size: 14px; margin-bottom: 30px; }
-       
         .grid-series { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; }
         .capa-container { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.3s; width: 180px; }
         .capa-container:hover { transform: scale(1.05); }
@@ -59,14 +58,20 @@
         #tela-episodio { display: none; width: 90%; max-width: 500px; text-align: left; margin-top: 20px; padding-bottom: 50px; }
         .titulo-pequeno { font-size: 14px; color: white; margin-bottom: 5px; }
         .traco-vermelho-meia-linha { width: 50px; height: 3px; background-color: red; margin-bottom: 20px; }
-        .temporada { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
-       
+
+        /* MENU TEMPORADAS */
+        .menu-temporadas { display: flex; gap: 20px; margin-bottom: 20px; }
+        .aba-temp { font-size: 22px; font-weight: bold; cursor: pointer; color: #555; transition: 0.3s; }
+        .aba-temp.ativa { color: white; border-bottom: 2px solid white; }
+        .aba-temp:hover { color: white; }
+
         .link-video { display: block; position: relative; width: 120px; height: 70px; border-radius: 6px; overflow: hidden; border: 1px solid white; margin-bottom: 10px; text-decoration: none; }
         .miniatura-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
         .icone-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid white; }
-
         .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .descricao-cinza { font-size: 12px; color: #888; margin-bottom: 30px; }
+
+        .retangulo-futuro { width: 120px; height: 70px; border: 1px solid white; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: bold; }
 
         .container-final { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 50px; text-align: center; }
         .texto-fim-gigante { color: #8B0000; font-weight: bold; font-size: 100px; margin: 0; line-height: 1; }
@@ -112,74 +117,77 @@
     <div id="tela-episodio">
         <div class="titulo-pequeno">Os gorilas sapecas da vovó Safira</div>
         <div class="traco-vermelho-meia-linha"></div>
-        <div class="temporada">Temporada 1</div>
+        
+        <div class="menu-temporadas">
+            <div id="aba-t1" class="aba-temp ativa" onclick="mudarTemporada(1)">Temporada 1</div>
+            <div id="aba-t2" class="aba-temp" onclick="mudarTemporada(2)">Temporada 2</div>
+        </div>
 
-        <a href="https://drive.google.com/file/d/1DEvih-6DdEB-v_G3eS5vwmBm18Pf8gDJ/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Introdução</div>
-        <div class="descricao-cinza">Os gorilas dizem um olá de novo, mas não um olá</div>
+        <div id="conteudo-t1">
+            <a href="https://drive.google.com/file/d/1DEvih-6DdEB-v_G3eS5vwmBm18Pf8gDJ/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Introdução</div>
+            <div class="descricao-cinza">Os gorilas dizem um olá de novo...</div>
 
-        <a href="https://drive.google.com/file/d/1vm3-j0e0QJyilzbZUDyeElkXboHv6uSh/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 1 - A casa</div>
-        <div class="descricao-cinza">Os 5 gorilas se cansam de casa...</div>
+            <a href="https://drive.google.com/file/d/1vm3-j0e0QJyilzbZUDyeElkXboHv6uSh/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 1 - A casa</div>
+            <div class="descricao-cinza">Os 5 gorilas se cansam de casa...</div>
 
-        <a href="https://drive.google.com/file/d/1_lYC0N50lJDM2j9MU7QVh_NC4HxCc1qO/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 2 - Vovó Safira</div>
-        <div class="descricao-cinza">Chegada a casa da vovó...</div>
+            <a href="https://drive.google.com/file/d/1_lYC0N50lJDM2j9MU7QVh_NC4HxCc1qO/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 2 - Vovó Safira</div>
+            <div class="descricao-cinza">Chegada a casa da vovó...</div>
 
-        <a href="https://drive.google.com/file/d/12_8qNViBeJzvNOR4XL_ZCscS1K5kc50j/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 3 - A caverna</div>
-        <div class="descricao-cinza">Os 5 gorilas se dão mal…</div>
+            <a href="https://drive.google.com/file/d/12_8qNViBeJzvNOR4XL_ZCscS1K5kc50j/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 3 - A caverna</div>
+            <div class="descricao-cinza">Os 5 gorilas se dão mal…</div>
 
-        <a href="https://drive.google.com/file/d/1ye3ktQ1Hjzq1lSP3rnGIdMlzmVYAmPvK/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 4 - O desespero</div>
-        <div class="descricao-cinza">Vovó Safira fica preocupada...</div>
+            <a href="https://drive.google.com/file/d/1ye3ktQ1Hjzq1lSP3rnGIdMlzmVYAmPvK/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 4 - O desespero</div>
+            <div class="descricao-cinza">Vovó Safira fica preocupada...</div>
 
-        <a href="https://drive.google.com/file/d/1nD9UDb3ggkYHQj1ESHqbENSdhqVcWj2D/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 5 - A escuridão</div>
-        <div class="descricao-cinza">Os gorilas ficam na escuridão do terror...</div>
+            <a href="https://drive.google.com/file/d/1nD9UDb3ggkYHQj1ESHqbENSdhqVcWj2D/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 5 - A escuridão</div>
+            <div class="descricao-cinza">Os gorilas ficam na escuridão do terror...</div>
 
-        <a href="https://drive.google.com/file/d/13GH5hEiY54plgGutQ4QJ7nhYmvXUVJm-/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 6 - O confronto</div>
-        <div class="descricao-cinza">Os gorilas lacram o monstro</div>
+            <a href="https://drive.google.com/file/d/13GH5hEiY54plgGutQ4QJ7nhYmvXUVJm-/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 6 - O confronto</div>
+            <div class="descricao-cinza">Os gorilas lacram o monstro</div>
 
-        <a href="https://drive.google.com/file/d/12fGiFGPwkGZibjYIiL_5za8BPzE8QyYs/view?usp=drivesdk" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 7 - O esconderijo</div>
-        <div class="descricao-cinza">Os gorilas descobrem o esconderijo do vilão…</div>
+            <a href="https://drive.google.com/file/d/12fGiFGPwkGZibjYIiL_5za8BPzE8QyYs/view?usp=drivesdk" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 7 - O esconderijo</div>
+            <div class="descricao-cinza">Os gorilas descobrem o esconderijo...</div>
 
-        <a href="https://drive.google.com/file/d/1J5s8IZYU1GJ0Pgbj2iFUIH7ERYCfLm5C/view?usp=sharing" target="_blank" class="link-video">
-            <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img">
-            <div class="icone-play"></div>
-        </a>
-        <div class="titulo-episodio">Episódio 8 FINAL - A batalha final</div>
-        <div class="descricao-cinza">Os gorilas enfrentam o vilão...</div>
+            <a href="https://drive.google.com/file/d/1J5s8IZYU1GJ0Pgbj2iFUIH7ERYCfLm5C/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 8 FINAL - A batalha final</div>
+            <div class="descricao-cinza">Os gorilas enfrentam o vilão...</div>
 
-        <div class="container-final">
-            <div class="texto-fim-gigante">FIM</div>
-            <img src="https://i.postimg.cc/1XXDjVrR/Trollface.png" class="img-troll-pequena">
+            <div class="container-final">
+                <div class="texto-fim-gigante">FIM</div>
+                <img src="https://i.postimg.cc/1XXDjVrR/Trollface.png" class="img-troll-pequena">
+            </div>
+        </div>
+
+        <div id="conteudo-t2" style="display: none;">
+            <div class="retangulo-futuro">15:30</div>
+            <div class="titulo-episodio">Episódio 9 - ???</div>
+            <div class="descricao-cinza">???</div>
         </div>
     </div>
 
@@ -189,6 +197,21 @@
 
     <script>
         var telaAtual = "login";
+
+        function mudarTemporada(num) {
+            if(num === 1) {
+                document.getElementById('conteudo-t1').style.display = 'block';
+                document.getElementById('conteudo-t2').style.display = 'none';
+                document.getElementById('aba-t1').classList.add('ativa');
+                document.getElementById('aba-t2').classList.remove('ativa');
+            } else {
+                document.getElementById('conteudo-t1').style.display = 'none';
+                document.getElementById('conteudo-t2').style.display = 'block';
+                document.getElementById('aba-t1').classList.remove('ativa');
+                document.getElementById('aba-t2').classList.add('ativa');
+            }
+        }
+
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
@@ -196,7 +219,7 @@
                 {u: "edu74", p: "edubatata"}, {u: "teste1", p: "1234"},
                 {u: "cevibola", p: "vitorcebola"}, {u: "miguelcabra", p: "miguelmacho"},
                 {u: "theol", p: "theocabra"}, {u: "martinbro", p: "martinbro"},
-                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"},
+                {u: "gbfrango", p: "frango"}, {u: "theoh", p: "bebet"}, 
                 {u: "enzoz", p: "enzo"}, {u: "antonio", p: "formiga"}
             ];
             var sucesso = logins.some(l => l.u === user && l.p === pass);
@@ -207,27 +230,27 @@
                 telaAtual = "series";
             } else { alert("Login ou senha incorretos!"); }
         }
+
         function abrirEpisodio() {
             document.getElementById('tela-series').style.display = 'none';
             document.getElementById('tela-episodio').style.display = 'block';
             telaAtual = "episodio";
         }
+
         function abrirDataCachorros() {
             document.getElementById('tela-series').style.display = 'none';
             document.getElementById('tela-data-cachorros').style.display = 'flex';
             telaAtual = "data-cachorros";
         }
+
         function voltar() {
             if (telaAtual === "series") {
                 document.getElementById('tela-series').style.display = 'none';
                 document.getElementById('btn-voltar').style.display = 'none';
                 document.getElementById('tela-login').style.display = 'flex';
                 telaAtual = "login";
-            } else if (telaAtual === "episodio") {
+            } else {
                 document.getElementById('tela-episodio').style.display = 'none';
-                document.getElementById('tela-series').style.display = 'block';
-                telaAtual = "series";
-            } else if (telaAtual === "data-cachorros") {
                 document.getElementById('tela-data-cachorros').style.display = 'none';
                 document.getElementById('tela-series').style.display = 'block';
                 telaAtual = "series";
