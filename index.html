@@ -70,8 +70,6 @@
         .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .descricao-cinza { font-size: 12px; color: #888; margin-bottom: 30px; }
 
-        .retangulo-futuro { width: 120px; height: 70px; border: 1px solid white; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: bold; }
-
         .container-final { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 50px; text-align: center; }
         .texto-fim-gigante { color: #8B0000; font-weight: bold; font-size: 100px; margin: 0; line-height: 1; }
         .img-troll-pequena { width: 60px; height: auto; margin-top: 20px; }
@@ -90,6 +88,7 @@
         </div>
     </div>
 
+    <!-- TELA 1 -->
     <div id="tela-login">
         <label>login:</label>
         <input type="text" id="usuario">
@@ -98,6 +97,7 @@
         <button class="botao-entrar" onclick="fazerLogin()">entrar</button>
     </div>
 
+    <!-- TELA 2 -->
     <div id="tela-series">
         <h1 class="titulo-azul">SÉRIES</h1>
         <p class="subtitulo-verde">Minhas Séries:</p>
@@ -113,6 +113,7 @@
         </div>
     </div>
 
+    <!-- TELA 3 -->
     <div id="tela-episodio">
         <div class="titulo-pequeno">Os gorilas sapecas da vovó Safira</div>
         <div class="traco-vermelho-meia-linha"></div>
@@ -123,7 +124,7 @@
             <div id="aba-t3" class="aba-temp" onclick="mudarTemporada(3)">Temporada 3</div>
         </div>
 
-        <!-- TEMPORADA 1 COMPLETA -->
+        <!-- TEMPORADA 1 -->
         <div id="conteudo-t1">
             <a href="https://drive.google.com/file/d/1DEvih-6DdEB-v_G3eS5vwmBm18Pf8gDJ/view?usp=sharing" target="_blank" class="link-video"><img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div></a>
             <div class="titulo-episodio">Introdução</div><div class="descricao-cinza">Os gorilas dizem um olá de novo...</div>
@@ -158,7 +159,7 @@
             </div>
         </div>
 
-        <!-- TEMPORADA 2 COMPLETA -->
+        <!-- TEMPORADA 2 -->
         <div id="conteudo-t2" style="display: none;">
             <a href="https://drive.google.com/file/d/1br2fO6VXMwMCio9LJDF589sTwzE__QZF/view?usp=sharing" target="_blank" class="link-video"><img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div></a>
             <div class="titulo-episodio">Episódio 9 - A transformação da Vovó Safira</div><div class="descricao-cinza">A segunda forma da vovó...</div>
@@ -178,17 +179,22 @@
 
         <!-- TEMPORADA 3 -->
         <div id="conteudo-t3" style="display: none;">
-            <div class="retangulo-futuro">16:30</div>
-            <div class="titulo-episodio">Episódio 14 - ???</div><div class="descricao-cinza">???</div>
+            <a href="https://drive.google.com/file/d/12JYR_OpK6CbZhQZMBeYgl3EjgEBu8HYi/view?usp=sharing" target="_blank" class="link-video">
+                <img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div>
+            </a>
+            <div class="titulo-episodio">Episódio 14 - O arrependimento</div>
+            <div class="descricao-cinza">Os gorilas fazem tudoooooooooooo de novo</div>
         </div>
     </div>
 
+    <!-- TELA DATA CACHORROS -->
     <div id="tela-data-cachorros">
         <div class="data-centralizada">17/05</div>
     </div>
 
     <script>
         var telaAtual = "login";
+
         function mudarTemporada(num) {
             document.getElementById('conteudo-t1').style.display = 'none';
             document.getElementById('conteudo-t2').style.display = 'none';
@@ -199,6 +205,7 @@
             document.getElementById('conteudo-t' + num).style.display = 'block';
             document.getElementById('aba-t' + num).classList.add('ativa');
         }
+
         function fazerLogin() {
             var user = document.getElementById('usuario').value;
             var pass = document.getElementById('senha').value;
@@ -211,8 +218,10 @@
                 telaAtual = "series";
             } else { alert("Login ou senha incorretos!"); }
         }
+
         function abrirEpisodio() { document.getElementById('tela-series').style.display = 'none'; document.getElementById('tela-episodio').style.display = 'block'; telaAtual = "episodio"; }
         function abrirDataCachorros() { document.getElementById('tela-series').style.display = 'none'; document.getElementById('tela-data-cachorros').style.display = 'flex'; telaAtual = "data-cachorros"; }
+        
         function voltar() {
             if (telaAtual === "series") {
                 document.getElementById('tela-series').style.display = 'none';
