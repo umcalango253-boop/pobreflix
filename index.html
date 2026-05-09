@@ -21,11 +21,11 @@
 
         /* SOMBREAMENTO BRANCO ATRÁS DO CONTEÚDO */
         #tela-login, #tela-series, #tela-episodio, #tela-data-cachorros {
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Sombra no texto */
-            background-color: rgba(255, 255, 255, 0.15); /* Névoa branca leve no fundo */
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.15);
             padding: 30px;
             border-radius: 15px;
-            backdrop-filter: blur(2px); /* Leve desfoque para destacar */
+            backdrop-filter: blur(2px);
             margin-top: 20px;
         }
 
@@ -71,8 +71,8 @@
         .capa-imagem { width: 180px; height: 260px; border-radius: 12px; border: 2px solid #333; object-fit: cover; }
         .titulo-serie-rosa { display: block; margin-top: 12px; font-size: 16px; font-weight: bold; color: #ff69b4; text-align: center; }
 
-        /* TELA EPISÓDIOS */
-        #tela-episodio { display: none; width: 90%; max-width: 500px; text-align: left; }
+        /* TELA EPISÓDIOS GERAL */
+        .area-episodios { width: 90%; max-width: 500px; text-align: left; }
         .menu-temporadas { display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
         .aba-temp { font-size: 20px; font-weight: bold; cursor: pointer; color: #444; transition: 0.3s; }
         .aba-temp.ativa { color: white; border-bottom: 2px solid white; }
@@ -83,14 +83,9 @@
         
         .titulo-episodio { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .descricao-cinza { font-size: 12px; color: #eee; margin-bottom: 30px; }
-        .retangulo-futuro { width: 120px; height: 70px; border: 1px solid white; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: bold; }
 
         .container-final { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 50px; text-align: center; }
         .texto-fim-gigante { color: #8B0000; font-weight: bold; font-size: 100px; margin: 0; text-shadow: 2px 2px 10px white; }
-        
-        /* TELA DATA CACHORROS */
-        #tela-data-cachorros { display: none; width: 100%; height: 60vh; align-items: center; justify-content: center; }
-        .data-centralizada { font-size: 80px; font-weight: bold; color: #8B0000; text-shadow: 4px 4px 0px #FFFFFF; }
     </style>
 </head>
 <body>
@@ -128,8 +123,8 @@
         </div>
     </div>
 
-    <!-- EPISODIOS GORILAS -->
-    <div id="tela-episodio">
+    <!-- TELA EPISODIOS GORILAS -->
+    <div id="tela-episodio" class="area-episodios">
         <div class="menu-temporadas">
             <div id="aba-t1" class="aba-temp ativa" onclick="mudarTemporada(1)">Temporada 1</div>
             <div id="aba-t2" class="aba-temp" onclick="mudarTemporada(2)">Temporada 2</div>
@@ -140,9 +135,6 @@
             <a href="https://drive.google.com/file/d/1DEvih-6DdEB-v_G3eS5vwmBm18Pf8gDJ/view?usp=sharing" target="_blank" class="link-video"><img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div></a>
             <div class="titulo-episodio">Introdução</div><div class="descricao-cinza">Os gorilas dizem um olá de novo...</div>
             
-            <a href="https://drive.google.com/file/d/1vm3-j0e0QJyilzbZUDyeElkXboHv6uSh/view?usp=sharing" target="_blank" class="link-video"><img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div></a>
-            <div class="titulo-episodio">Episódio 1 - A casa</div><div class="descricao-cinza">Os 5 gorilas se cansam de casa...</div>
-
             <a href="https://drive.google.com/file/d/1J5s8IZYU1GJ0Pgbj2iFUIH7ERYCfLm5C/view?usp=sharing" target="_blank" class="link-video"><img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div></a>
             <div class="titulo-episodio">Episódio 8 FINAL</div><div class="descricao-cinza">A batalha final dos gorilas!</div>
 
@@ -157,12 +149,20 @@
         <div id="conteudo-t3" style="display: none;">
             <a href="https://drive.google.com/file/d/12JYR_OpK6CbZhQZMBeYgl3EjgEBu8HYi/view?usp=sharing" target="_blank" class="link-video"><img src="https://i.postimg.cc/KjWkCKmM/IMG-3468.jpg" class="miniatura-img"><div class="icone-play"></div></a>
             <div class="titulo-episodio">Episódio 14 - O arrependimento</div><div class="descricao-cinza">Os gorilas fazem tudoooooooooooo de novo</div>
-            <div class="retangulo-futuro">16:30</div><div class="titulo-episodio">Episódio 15</div><div class="descricao-cinza">???</div>
         </div>
     </div>
 
-    <!-- TELA CACHORROS -->
-    <div id="tela-data-cachorros"><div class="data-centralizada">17/05</div></div>
+    <!-- TELA SERIE DOS CACHORROS -->
+    <div id="tela-data-cachorros" class="area-episodios">
+        <div class="titulo-serie-rosa" style="text-align: left; font-size: 18px; margin-bottom: 20px;">A missão secreta dos cachorros</div>
+        
+        <a href="https://drive.google.com/file/d/1WSCzysDo2oL336yP776dVeuzUJd6vEzx/view?usp=sharing" target="_blank" class="link-video">
+            <img src="https://i.postimg.cc/4NqbXysg/Gemini-Generated-Image-wggw1xwggw1xwggw.png" class="miniatura-img">
+            <div class="icone-play"></div>
+        </a>
+        <div class="titulo-episodio">Trailer</div>
+        <div class="descricao-cinza">A missão secreta dos cachorros!</div>
+    </div>
 
     <script>
         var telaAtual = "login";
@@ -191,8 +191,17 @@
             } else { alert("Login ou senha incorretos!"); }
         }
 
-        function abrirEpisodio() { document.getElementById('tela-series').style.display = 'none'; document.getElementById('tela-episodio').style.display = 'block'; telaAtual = "episodio"; }
-        function abrirDataCachorros() { document.getElementById('tela-series').style.display = 'none'; document.getElementById('tela-data-cachorros').style.display = 'flex'; telaAtual = "data-cachorros"; }
+        function abrirEpisodio() { 
+            document.getElementById('tela-series').style.display = 'none'; 
+            document.getElementById('tela-episodio').style.display = 'block'; 
+            telaAtual = "episodio"; 
+        }
+        
+        function abrirDataCachorros() { 
+            document.getElementById('tela-series').style.display = 'none'; 
+            document.getElementById('tela-data-cachorros').style.display = 'block'; 
+            telaAtual = "data-cachorros"; 
+        }
 
         function voltar() {
             if (telaAtual === "series") {
